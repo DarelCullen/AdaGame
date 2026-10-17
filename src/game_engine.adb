@@ -1,8 +1,11 @@
 --------------------------------------------------------------------------------
 --  Game_Engine: Implementation of game loop, input, state, and rendering
 --------------------------------------------------------------------------------
+with Ada.Text_IO;
+with Ada.Exceptions;
 with Ada.Real_Time; use Ada.Real_Time;
 with SDL;
+with SDL.Error;
 with SDL.Events;
 with SDL.Events.Events;
 with SDL.Events.Keyboards;
@@ -17,6 +20,7 @@ package body Game_Engine is
 
    use Interfaces.C;
    use type Interfaces.C.int;
+   use type SDL.Init_Flags;
    use type SDL.Events.Event_Types;
    use type SDL.Events.Keyboards.Scan_Codes;
 
@@ -471,9 +475,12 @@ package body Game_Engine is
       Frame_Duration       : constant Ada.Real_Time.Time_Span :=
         Ada.Real_Time.Microseconds (16_667); -- 60 FPS
    begin
-      if not SDL.Initialise then
+      Ada.Text_IO.Put_Line ("Initializing The Quest of the Ada Knight...");
+      if not SDL.Initialise (SDL.Enable_Screen or SDL.Enable_Events or SDL.Enable_Timer) then
+         Ada.Text_IO.Put_Line ("SDL Initialise failed: " & SDL.Error.Get);
          return;
       end if;
+      Ada.Text_IO.Put_Line ("SDL initialised. Creating game window...");
 
       SDL.Video.Windows.Makers.Create
         (Win      => W,
@@ -483,6 +490,7 @@ package body Game_Engine is
          Flags    => SDL.Video.Windows.Resizable);
 
       SDL.Video.Renderers.Makers.Create (Renderer, W);
+      Ada.Text_IO.Put_Line ("Window & Renderer created. Starting main loop...");
 
       Init_Game (Engine);
       Loop_Start_Time_Goal := Ada.Real_Time.Clock;
@@ -516,8 +524,12 @@ package body Game_Engine is
          delay until Loop_Start_Time_Goal;
       end loop Main_Loop;
 
+      Ada.Text_IO.Put_Line ("Shutting down cleanly...");
       W.Finalize;
       SDL.Finalise;
+   exception
+      when E : others =>
+         Ada.Text_IO.Put_Line ("Fatal Exception: " & Ada.Exceptions.Exception_Information (E));
    end Run;
 
 end Game_Engine;
