@@ -1,0 +1,14 @@
+name = "ada_adventure"
+description = ""
+version = "0.1.0-dev"
+
+authors = ["Your Name"]
+maintainers = ["Your Name <example@example.com>"]
+licenses = "MIT"
+website = ""
+tags = []
+
+executables = ["ada_adventure"]
+
+[[depends-on]]
+sdlada = "^2.5.20"
