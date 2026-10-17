@@ -56,14 +56,97 @@ The game is structured in idiomatic, strongly-typed Ada packages:
 
 ---
 
-## 🚀 How to Build and Run
+## 📦 Dependencies & Prerequisites
 
-### Run directly with Alire:
+To build and run the game, you need the **Alire package manager** (`alr`) and **SDL2 development libraries**. Alire will automatically download and configure the **GNAT** Ada compiler and the `sdlada` bindings crate.
+
+### 1. Install Alire (`alr`)
+
+- **macOS (Apple Silicon & Intel):**
+  Download the latest binary archive from the [Alire Releases page](https://github.com/alire-project/alire/releases/latest) and place it in your `PATH`:
+  ```bash
+  # For Apple Silicon (M1/M2/M3/M4):
+  curl -LO https://github.com/alire-project/alire/releases/download/v2.1.1/alr-2.1.1-bin-aarch64-macos.zip
+  unzip alr-2.1.1-bin-aarch64-macos.zip
+  mv bin/alr /opt/homebrew/bin/   # or ~/.local/bin/
+
+  # For Intel Mac:
+  curl -LO https://github.com/alire-project/alire/releases/download/v2.1.1/alr-2.1.1-bin-x86_64-macos.zip
+  unzip alr-2.1.1-bin-x86_64-macos.zip
+  mv bin/alr /usr/local/bin/
+  ```
+
+- **Linux (Ubuntu / Debian):**
+  ```bash
+  # Download and extract the Linux binary:
+  curl -LO https://github.com/alire-project/alire/releases/download/v2.1.1/alr-2.1.1-bin-x86_64-linux.zip
+  unzip alr-2.1.1-bin-x86_64-linux.zip
+  sudo mv bin/alr /usr/local/bin/
+  ```
+
+- **Windows:**
+  Download the installer or zip from the [Alire Releases page](https://github.com/alire-project/alire/releases/latest).
+
+---
+
+### 2. Install SDL2 Libraries
+
+Install the SDL2 development packages for your platform:
+
+- **macOS (Homebrew):**
+  ```bash
+  brew install sdl2-compat sdl2_image sdl2_mixer sdl2_ttf
+  ```
+
+- **Debian / Ubuntu:**
+  ```bash
+  sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
+  ```
+
+- **Fedora / RHEL:**
+  ```bash
+  sudo dnf install SDL2-devel SDL2_image-devel SDL2_mixer-devel SDL2_ttf-devel
+  ```
+
+- **Arch Linux:**
+  ```bash
+  sudo pacman -S sdl2 sdl2_image sdl2_mixer sdl2_ttf
+  ```
+
+*(Note: When you run `alr build` for the first time, Alire can also detect and offer to install missing system packages automatically).*
+
+---
+
+### 3. Configure the GNAT Toolchain
+
+If this is your first time using Alire, select the native GNAT compiler:
+```bash
+alr toolchain --select gnat_native gprbuild
+```
+
+---
+
+## 🚀 Building & Running
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/DarelCullen/AdaGame.git
+cd AdaGame
+```
+
+### 2. Build the project
+Alire will fetch dependencies (like `sdlada`) and build the binary into `bin/`:
+```bash
+alr build
+```
+
+### 3. Run the game
+Launch directly through Alire:
 ```bash
 alr run
 ```
 
-### Or launch the compiled binary:
+Or execute the compiled binary directly:
 ```bash
 ./bin/ada_adventure
 ```
