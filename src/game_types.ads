@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_Types: Core type definitions for Ada Adventure Game
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with Interfaces.C;
 with SDL;

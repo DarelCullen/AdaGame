@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_World: Implementation of maps, entities, collision and interactions
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 package body Game_World is
 

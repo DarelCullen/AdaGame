@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_Sprites: Implementation of pixel-art graphics rendering
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with SDL.Video.Rectangles;
 with SDL.Video.Palettes; use SDL.Video.Palettes;

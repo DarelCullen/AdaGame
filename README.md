@@ -67,3 +67,16 @@ alr run
 ```bash
 ./bin/ada_adventure
 ```
+
+---
+
+## 📜 License
+
+This project is licensed under the **GNU General Public License v2.0** (`GPL-2.0-only`).
+See the [LICENSE](LICENSE) file for the full license text.
+
+All source files carry the SPDX license identifier:
+```ada
+--  SPDX-License-Identifier: GPL-2.0-only
+```
+

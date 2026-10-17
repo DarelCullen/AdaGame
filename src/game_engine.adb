@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_Engine: Implementation of game loop, input, state, and rendering
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with Ada.Text_IO;
 with Ada.Exceptions;

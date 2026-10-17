@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_Font: Body implementing a 5x7 retro bitmap font
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with SDL.Video.Rectangles;
 

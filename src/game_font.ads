@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_Font: Crisp retro bitmap font renderer for SDL2
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with Interfaces.C;
 with SDL;

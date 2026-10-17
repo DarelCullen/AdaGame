@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_World: Rooms, Maps, Tile definitions, and Entity placement
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with Interfaces.C;
 with Game_Types; use Game_Types;

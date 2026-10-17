@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 --  Ada Adventure: Entry Point
 --  The Quest of the Ada Knight
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with Game_Engine;
 

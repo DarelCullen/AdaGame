@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_Engine: Main game state, event processing, update loop and rendering
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with Interfaces.C;
 with SDL.Video.Renderers;

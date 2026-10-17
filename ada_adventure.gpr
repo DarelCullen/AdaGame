@@ -1,3 +1,4 @@
+--  SPDX-License-Identifier: GPL-2.0-only
 with "config/ada_adventure_config.gpr";
 project Ada_Adventure is
 

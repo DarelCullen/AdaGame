@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 --  Game_Sprites: Procedural 2D pixel-art graphics rendering for Ada Adventure
+--  SPDX-License-Identifier: GPL-2.0-only
 --------------------------------------------------------------------------------
 with Interfaces.C;
 with SDL;
